@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .wrapper {
+        @apply max-w-[1280px];
+        margin: auto;
+    }
+    .left-why {
+        @apply absolute bg-white w-[50%] h-[100%] left-0;
+        transition: transform 2s ease-in 0.5s;
+        transform: translateX(-100%);
+    }
+    .right-why {
+        @apply absolute bg-white w-[50%] h-[100%] right-0;
+        transition: transform 2s ease-in 0.5s;
+        transform: translateX(100%);
+    }
+}

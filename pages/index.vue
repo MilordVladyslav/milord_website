@@ -4,8 +4,8 @@ import AboutMe from "~/components/tabs/AboutMe.vue";
 import Skills from "~/components/tabs/Skills.vue";
 import Education from "~/components/tabs/Education.vue";
 import "@splidejs/vue-splide/css";
-const activeTab = shallowRef(AboutMe);
-const activeTabTitle = ref(0);
+const activeTab = shallowRef(Skills);
+const activeTabTitle = ref(1);
 const tabs = [
   {
     component: AboutMe,
@@ -22,36 +22,40 @@ const tabs = [
 ];
 </script>
 <template>
-  <div class="h-[2900px]">
-    <header class="h-[80px] border-b-2 border-emerald-600">
-      <div class="wrapper h-[80px] flex items-center justify-between">
+  <div>
+    <header
+      class="h-[50px] border-b-2 border-emerald-600 fixed w-full z-10 bg-white"
+    >
+      <div class="wrapper h-[50px] flex items-center justify-between">
         <div class="flex items-center">
-          <div class="w-[50px] h-[50px] border-2 rounded-full overflow-hidden">
+          <div
+            class="hidden md:block w-[50px] h-[50px] border-2 rounded-full overflow-hidden"
+          >
             <div><img src="http://placekitten.com/200/300" /></div>
           </div>
-          <div class="ml-5 text-xl"><p>Vladyslav Petrachuk</p></div>
+          <div class="ml-5 text-lg md:text-xl"><p>Vladyslav Petrachuk</p></div>
         </div>
         <div class="flex">
           <div
-            class="w-[120px] text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
+            class="w-[120px] md:text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
           >
             <p>About Me</p>
           </div>
           <div
-            class="w-[120px] text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
+            class="w-[120px] md:text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
           >
             <p>Examples</p>
           </div>
           <div
-            class="w-[120px] text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
+            class="w-[120px] md:text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
           >
             <p>Availability</p>
           </div>
         </div>
       </div>
     </header>
-    <section class="wrapper">
-      <Splide aria-label="My Favorite Images">
+    <section class="wrapper pr-0 pl-0 pt-[50px]">
+      <Splide aria-label="Portfolio carousel">
         <SplideSlide>
           <img src="http://placekitten.com/1280/600" alt="Sample 1" />
         </SplideSlide>
@@ -64,19 +68,21 @@ const tabs = [
       </Splide>
     </section>
     <section class="wrapper justify-center">
-      <div class="mt-20 relative overflow-hidden">
-        <div class="h-[2px] bg-emerald-600 w-full absolute top-[35px]"></div>
+      <div class="mt-5 md:mt-20 relative overflow-hidden">
+        <div
+          class="h-[2px] bg-emerald-600 w-full absolute top-[17px] md:top-[35px]"
+        ></div>
         <div class="left-why"></div>
         <div class="right-why"></div>
         <div class="flex justify-center">
           <p
-            class="text-[42px] font-bold z-6 relative bg-white w-[150px] text-center"
+            class="text-[24px] md:text-[42px] font-bold z-6 relative bg-white w-[150px] text-center"
           >
             WHY
           </p>
         </div>
       </div>
-      <div class="mt-20 h-[300px]">
+      <div class="mt-5 md:mt-20 h-[300px]">
         <div class="flex justify-between text-center border-2 cursor-pointer">
           <div
             v-for="(item, index) in tabs"
@@ -93,8 +99,8 @@ const tabs = [
             {{ item.title }}
           </div>
         </div>
-        <Transition name="fade" class="mt-6">
-          <component :is="activeTab"></component>
+        <Transition name="fade">
+          <component :is="activeTab" class="mt-6"></component>
         </Transition>
       </div>
     </section>
@@ -193,6 +199,137 @@ const tabs = [
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="mt-20">
+      <div class="wrapper">
+        <div class="flex">
+          <p class="text-2xl border-b-2 border-emerald-600 mb-6">PORTFOLIO</p>
+        </div>
+        <div class="flex justify-between flex-wrap">
+          <div
+            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+          >
+            <img src="http://placekitten.com/200/300" class="w-full" />
+          </div>
+          <div
+            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+          >
+            <img src="http://placekitten.com/200/300" class="w-full" />
+          </div>
+          <div
+            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+          >
+            <img src="http://placekitten.com/200/300" class="w-full" />
+          </div>
+          <div
+            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+          >
+            <img src="http://placekitten.com/200/300" class="w-full" />
+          </div>
+          <div
+            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+          >
+            <img src="http://placekitten.com/200/300" class="w-full" />
+          </div>
+          <div
+            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+          >
+            <img src="http://placekitten.com/200/300" class="w-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-20">
+      <div class="wrapper">
+        <div class="flex">
+          <p class="text-2xl border-b-2 border-emerald-600 mb-6">FEEDBACK</p>
+        </div>
+        <div class="flex">
+          <div>
+            <div
+              class="w-[50px] h-[50px] border-2 rounded-full overflow-hidden"
+            >
+              <div><img src="http://placekitten.com/200/300" /></div>
+            </div>
+          </div>
+          <div class="ml-2">
+            <p>Emmanuel Neni</p>
+            <p class="text-sm">Web-Developer</p>
+          </div>
+        </div>
+        <div class="ml-14 mt-2">
+          <p class="italic text-xl">
+            <span class="text-xl font-bold text-emerald-600">“</span
+            >Hardworking, determined, and motivated, that is what comes to mind
+            if I describe Vladyslav. I have had the pleasure of working for over
+            1 year with Vladyslav at Eliftech, in many different capacities and
+            tasks. His ability to work on multiple tasks while properly managing
+            time allotted a task was great to have. And at the same time he also
+            made a big difference in productivity of the team. Meetings were fun
+            packed with humor and smiles thanks to Vladyslav which made the
+            process all the more enjoyable. I believe Vladyslav will be a great
+            addition to any team and Every employee would be happy with an
+            engineer as Vladyslav.<span
+              class="text-xl font-bold text-emerald-600"
+              >”</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mt-20">
+      <div class="wrapper">
+        <div class="flex">
+          <p class="text-2xl border-b-2 border-emerald-600 mb-6">
+            AVAILABILITY
+          </p>
+        </div>
+        <div class="flex items-center">
+          <div class="mr-2 bg-emerald-600 rounded-full w-[8px] h-[8px]"></div>
+          <p>Available as a Vue.js developer</p>
+        </div>
+      </div>
+    </section>
+    <section class="mt-20">
+      <div class="wrapper">
+        <div class="flex">
+          <p class="text-2xl border-b-2 border-emerald-600 mb-6">CONTACTS</p>
+        </div>
+        <div>
+          <p class="mr-2 mb-2">
+            <a href="#" class="flex w-[110px] items-center"
+              ><img
+                src="../assets/icons8-gmail-logo-100.png"
+                class="w-[38px] mr-2"
+              />Gmail</a
+            >
+          </p>
+          <p class="mr-2 mb-2">
+            <a href="#" class="flex w-[110px] items-center"
+              ><img
+                src="../assets/icons8-linkedin-circled-96.png"
+                class="w-[38px] mr-2"
+              />LinkedIn</a
+            >
+          </p>
+          <p class="mr-2 mb-2">
+            <a href="#" class="flex w-[110px] items-center"
+              ><img
+                src="../assets/icons8-github-squared-100.png"
+                class="w-[38px] mr-2"
+              />
+              GitHub
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mt-20">
+      <div
+        class="text-center font-bold text-xl text-white bg-emerald-600 pt-3 pb-3"
+      >
+        2023
       </div>
     </section>
   </div>

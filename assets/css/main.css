@@ -4,7 +4,7 @@
 
 @layer components {
     .wrapper {
-        @apply max-w-[1280px] pl-5 pr-5;
+        @apply max-w-[1280px] pl-2 pr-2 sm:pl-5 sm:pr-5;
         margin: auto;
     }
     .left-why {

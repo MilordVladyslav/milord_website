@@ -1,5 +1,5 @@
 <template>
-  <p class="text-lg">
+  <p class="md:text-lg">
     I have four years of commercial experience in web-development and over five
     years of hands-on experience at all. Depending on the situation I am ready
     to follow the instructions carefully or take the lead and manage the working

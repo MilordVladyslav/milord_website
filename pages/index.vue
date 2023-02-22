@@ -1,8 +1,10 @@
 <script setup>
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import Header from "~/components/Header.vue";
 import AboutMe from "~/components/tabs/AboutMe.vue";
 import Skills from "~/components/tabs/Skills.vue";
 import Education from "~/components/tabs/Education.vue";
+import Footer from "~/components/Footer.vue";
 import "@splidejs/vue-splide/css";
 const activeTab = shallowRef(Skills);
 const activeTabTitle = ref(1);
@@ -23,38 +25,8 @@ const tabs = [
 </script>
 <template>
   <div>
-    <header
-      class="h-[50px] border-b-2 border-emerald-600 fixed w-full z-10 bg-white"
-    >
-      <div class="wrapper h-[50px] flex items-center justify-between">
-        <div class="flex items-center">
-          <div
-            class="hidden md:block w-[50px] h-[50px] border-2 rounded-full overflow-hidden"
-          >
-            <div><img src="http://placekitten.com/200/300" /></div>
-          </div>
-          <div class="ml-5 text-lg md:text-xl"><p>Vladyslav Petrachuk</p></div>
-        </div>
-        <div class="flex">
-          <div
-            class="w-[120px] md:text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
-          >
-            <p>About Me</p>
-          </div>
-          <div
-            class="w-[120px] md:text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
-          >
-            <p>Examples</p>
-          </div>
-          <div
-            class="w-[120px] md:text-lg hover:bg-emerald-600 h-[80px] flex items-center justify-center hover:text-white transition duration-150 linear cursor-pointer"
-          >
-            <p>Availability</p>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section class="wrapper pr-0 pl-0 pt-[50px]">
+    <Header></Header>
+    <section class="wrapper pr-0 pl-0 pt-[50px] md:pt-[80px]">
       <Splide aria-label="Portfolio carousel">
         <SplideSlide>
           <img src="http://placekitten.com/1280/600" alt="Sample 1" />
@@ -82,13 +54,13 @@ const tabs = [
           </p>
         </div>
       </div>
-      <div class="mt-5 md:mt-20 h-[300px]">
+      <div class="mt-4 md:mt-20 md:h-[300px]">
         <div class="flex justify-between text-center border-2 cursor-pointer">
           <div
             v-for="(item, index) in tabs"
             :key="index"
             :class="[
-              'w-full transition duration-500 linear text-2xl hover:bg-emerald-500 hover:text-white pt-4 pb-4',
+              'w-full transition duration-500 linear md:text-2xl hover:bg-emerald-500 hover:text-white md:pt-4 md:pb-4',
               { 'text-white bg-emerald-600': index === activeTabTitle },
             ]"
             @click="
@@ -104,25 +76,27 @@ const tabs = [
         </Transition>
       </div>
     </section>
-    <section class="mt-20">
+    <section class="mt-4 md:mt-20">
       <div class="wrapper">
         <div>
           <div class="flex">
-            <p class="text-2xl border-b-2 border-emerald-600 mb-6">
+            <p class="text-lg md:text-2xl border-b-2 border-emerald-600 mb-6">
               WORK EXPERIENCE
             </p>
           </div>
 
-          <div class="flex">
-            <div class="w-1/4 relative border-r-2 border-emerald-600 mr-4 pb-6">
+          <div class="flex flex-col md:flex-row">
+            <div
+              class="md:w-1/4 relative md:border-r-2 border-emerald-600 mr-4 pb-2 md:pb-6"
+            >
               <p class="text-lg font-bold">ElifTech</p>
               <p>Software Engineer</p>
               <p>Nov 2020 - Jan 2022</p>
               <span
-                class="absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
+                class="hidden md:block absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
               ></span>
             </div>
-            <div>
+            <div class="mb-2">
               <p>
                 Development and maintaining a FinTech project, communication
                 with the clients, writing documentation, onboarding new team
@@ -130,16 +104,18 @@ const tabs = [
               </p>
             </div>
           </div>
-          <div class="flex">
-            <div class="w-1/4 relative border-r-2 border-emerald-600 mr-4 pb-6">
+          <div class="flex flex-col md:flex-row">
+            <div
+              class="md:w-1/4 relative md:border-r-2 border-emerald-600 mr-4 pb-2 md:pb-6"
+            >
               <p class="text-lg font-bold">ElifTech</p>
               <p>Software Engineer</p>
               <p>Nov 2020 - Jan 2022</p>
               <span
-                class="absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
+                class="hidden md:block absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
               ></span>
             </div>
-            <div>
+            <div class="mb-2">
               <p>
                 Development and maintaining a FinTech project, communication
                 with the clients, writing documentation, onboarding new team
@@ -147,16 +123,18 @@ const tabs = [
               </p>
             </div>
           </div>
-          <div class="flex">
-            <div class="w-1/4 relative border-r-2 border-emerald-600 mr-4 pb-6">
+          <div class="flex flex-col md:flex-row">
+            <div
+              class="md:w-1/4 relative md:border-r-2 border-emerald-600 mr-4 pb-2 md:pb-6"
+            >
               <p class="text-lg font-bold">ElifTech</p>
               <p>Software Engineer</p>
               <p>Nov 2020 - Jan 2022</p>
               <span
-                class="absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
+                class="hidden md:block absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
               ></span>
             </div>
-            <div>
+            <div class="mb-2">
               <p>
                 Development and maintaining a FinTech project, communication
                 with the clients, writing documentation, onboarding new team
@@ -164,16 +142,18 @@ const tabs = [
               </p>
             </div>
           </div>
-          <div class="flex">
-            <div class="w-1/4 relative border-r-2 border-emerald-600 mr-4 pb-6">
+          <div class="flex flex-col md:flex-row">
+            <div
+              class="md:w-1/4 relative md:border-r-2 border-emerald-600 mr-4 pb-2 md:pb-6"
+            >
               <p class="text-lg font-bold">ElifTech</p>
               <p>Software Engineer</p>
               <p>Nov 2020 - Jan 2022</p>
               <span
-                class="absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
+                class="hidden md:block absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
               ></span>
             </div>
-            <div>
+            <div class="mb-2">
               <p>
                 Development and maintaining a FinTech project, communication
                 with the clients, writing documentation, onboarding new team
@@ -181,16 +161,18 @@ const tabs = [
               </p>
             </div>
           </div>
-          <div class="flex">
-            <div class="w-1/4 relative border-r-2 border-emerald-600 mr-4 pb-6">
+          <div class="flex flex-col md:flex-row">
+            <div
+              class="md:w-1/4 relative md:border-r-2 border-emerald-600 mr-4 pb-2 md:pb-6"
+            >
               <p class="text-lg font-bold">ElifTech</p>
               <p>Software Engineer</p>
               <p>Nov 2020 - Jan 2022</p>
               <span
-                class="absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
+                class="hidden md:block absolute w-[16px] h-[16px] rounded-full bg-emerald-600 top-[-8px] right-[-9px]"
               ></span>
             </div>
-            <div>
+            <div class="mb-2">
               <p>
                 Development and maintaining a FinTech project, communication
                 with the clients, writing documentation, onboarding new team
@@ -201,52 +183,56 @@ const tabs = [
         </div>
       </div>
     </section>
-    <section class="mt-20">
+    <section class="mt-4 md:mt-20">
       <div class="wrapper">
         <div class="flex">
-          <p class="text-2xl border-b-2 border-emerald-600 mb-6">PORTFOLIO</p>
+          <p class="text-lg md:text-2xl border-b-2 border-emerald-600 mb-6">
+            PORTFOLIO
+          </p>
         </div>
         <div class="flex justify-between flex-wrap">
           <div
-            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+            class="bg-emerald-200 w-full sm:w-[48%] md:w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
           >
             <img src="http://placekitten.com/200/300" class="w-full" />
           </div>
           <div
-            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+            class="bg-emerald-200 w-full sm:w-[48%] md:w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
           >
             <img src="http://placekitten.com/200/300" class="w-full" />
           </div>
           <div
-            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+            class="bg-emerald-200 w-full sm:w-[48%] md:w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
           >
             <img src="http://placekitten.com/200/300" class="w-full" />
           </div>
           <div
-            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+            class="bg-emerald-200 w-full sm:w-[48%] md:w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
           >
             <img src="http://placekitten.com/200/300" class="w-full" />
           </div>
           <div
-            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+            class="bg-emerald-200 w-full sm:w-[48%] md:w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
           >
             <img src="http://placekitten.com/200/300" class="w-full" />
           </div>
           <div
-            class="bg-emerald-200 w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
+            class="bg-emerald-200 w-full sm:w-[48%] md:w-[32%] h-[300px] mb-5 overflow-hidden flex justify-center"
           >
             <img src="http://placekitten.com/200/300" class="w-full" />
           </div>
         </div>
       </div>
     </section>
-    <section class="mt-20">
+    <section class="mt-4 md:mt-20">
       <div class="wrapper">
         <div class="flex">
-          <p class="text-2xl border-b-2 border-emerald-600 mb-6">FEEDBACK</p>
+          <p class="text-lg md:text-2xl border-b-2 border-emerald-600 mb-6">
+            FEEDBACK
+          </p>
         </div>
         <div class="flex">
-          <div>
+          <div class="hidden md:block">
             <div
               class="w-[50px] h-[50px] border-2 rounded-full overflow-hidden"
             >
@@ -258,9 +244,9 @@ const tabs = [
             <p class="text-sm">Web-Developer</p>
           </div>
         </div>
-        <div class="ml-14 mt-2">
-          <p class="italic text-xl">
-            <span class="text-xl font-bold text-emerald-600">“</span
+        <div class="md:ml-14 mt-2">
+          <p class="italic md:text-xl">
+            <span class="md:text-xl font-bold text-emerald-600">“</span
             >Hardworking, determined, and motivated, that is what comes to mind
             if I describe Vladyslav. I have had the pleasure of working for over
             1 year with Vladyslav at Eliftech, in many different capacities and
@@ -271,17 +257,19 @@ const tabs = [
             process all the more enjoyable. I believe Vladyslav will be a great
             addition to any team and Every employee would be happy with an
             engineer as Vladyslav.<span
-              class="text-xl font-bold text-emerald-600"
+              class="md:text-xl font-bold text-emerald-600"
               >”</span
             >
           </p>
         </div>
       </div>
     </section>
-    <section class="mt-20">
+    <section class="mt-4 md:mt-20">
       <div class="wrapper">
         <div class="flex">
-          <p class="text-2xl border-b-2 border-emerald-600 mb-6">
+          <p
+            class="text-lg md:text-2xl border-b-2 border-emerald-600 mb-4 md:mb-6"
+          >
             AVAILABILITY
           </p>
         </div>
@@ -291,10 +279,14 @@ const tabs = [
         </div>
       </div>
     </section>
-    <section class="mt-20">
+    <section class="mt-4 md:mt-20">
       <div class="wrapper">
         <div class="flex">
-          <p class="text-2xl border-b-2 border-emerald-600 mb-6">CONTACTS</p>
+          <p
+            class="text-lg md:text-2xl border-b-2 border-emerald-600 mb-4 md:mb-6"
+          >
+            CONTACTS
+          </p>
         </div>
         <div>
           <p class="mr-2 mb-2">
@@ -325,13 +317,7 @@ const tabs = [
         </div>
       </div>
     </section>
-    <section class="mt-20">
-      <div
-        class="text-center font-bold text-xl text-white bg-emerald-600 pt-3 pb-3"
-      >
-        2023
-      </div>
-    </section>
+    <Footer></Footer>
   </div>
 </template>
 

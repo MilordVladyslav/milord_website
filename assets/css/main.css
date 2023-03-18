@@ -3,18 +3,23 @@
 @tailwind utilities;
 
 @layer components {
+    body {
+        background-image: url("../AdobeStock_291217289-copy.jpg");
+        /*background-repeat: no-repeat;*/
+        background-size: cover;
+    }
     .wrapper {
         @apply max-w-[1280px] pl-2 pr-2 sm:pl-5 sm:pr-5;
         margin: auto;
     }
     .left-why {
-        @apply absolute bg-white w-[50%] h-[100%] left-0;
+        @apply absolute bg-emerald-600 w-[40%] h-[2px] top-[50%] left-[-100%];
         transition: transform 2s ease-in 0.5s;
-        transform: translateX(-100%);
+        transform: translateX(250%);
     }
     .right-why {
-        @apply absolute bg-white w-[50%] h-[100%] right-0;
+        @apply absolute bg-emerald-600 w-[40%] h-[2px] top-[50%] right-[-100%];
         transition: transform 2s ease-in 0.5s;
-        transform: translateX(100%);
+        transform: translateX(-250%);
     }
 }

@@ -1,5 +1,12 @@
 <script setup>
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
+// onMounted(() => {
+//   import("../node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js");
+// });
+
+// });
+// import "../node_modules/particles.js/particles.js";
+
 import Header from "~/components/Header.vue";
 import AboutMe from "~/components/tabs/AboutMe.vue";
 import Skills from "~/components/tabs/Skills.vue";
@@ -22,9 +29,14 @@ const tabs = [
     title: "Education",
   },
 ];
+// import("../node_modules/particles.js/particles.js").then(() => {
+//   particlesJS.load("particles-js", "particlesjs-config.json", function () {
+//     console.log("callback - particles.js config loaded");
+//   });
+// });
 </script>
 <template>
-  <div>
+  <div id="particles-js">
     <Header></Header>
     <section class="wrapper pr-0 pl-0 pt-[50px] md:pt-[80px]">
       <Splide aria-label="Portfolio carousel">
@@ -39,23 +51,22 @@ const tabs = [
         </SplideSlide>
       </Splide>
     </section>
-    <section class="wrapper justify-center">
+    <section class="wrapper justify-center skills">
       <div class="mt-5 md:mt-20 relative overflow-hidden">
-        <div
-          class="h-[2px] bg-emerald-600 w-full absolute top-[17px] md:top-[35px]"
-        ></div>
         <div class="left-why"></div>
         <div class="right-why"></div>
         <div class="flex justify-center">
           <p
-            class="text-[24px] md:text-[42px] font-bold z-6 relative bg-white w-[150px] text-center"
+            class="text-[24px] md:text-[42px] font-bold z-6 relative w-[150px] text-center"
           >
             WHY
           </p>
         </div>
       </div>
       <div class="mt-4 md:mt-20 md:h-[300px]">
-        <div class="flex justify-between text-center border-2 cursor-pointer">
+        <div
+          class="flex justify-between text-center border-2 border-emerald-600 cursor-pointer"
+        >
           <div
             v-for="(item, index) in tabs"
             :key="index"

@@ -29,6 +29,9 @@ const tabs = [
     title: "Education",
   },
 ];
+onMounted(() => {
+  console.log($hello);
+});
 // import("../node_modules/particles.js/particles.js").then(() => {
 //   particlesJS.load("particles-js", "particlesjs-config.json", function () {
 //     console.log("callback - particles.js config loaded");
@@ -59,7 +62,7 @@ const tabs = [
           <p
             class="text-[24px] md:text-[42px] font-bold z-6 relative w-[150px] text-center"
           >
-            WHY
+            WHY {{ $hello("world") }}
           </p>
         </div>
       </div>
